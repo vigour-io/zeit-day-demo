@@ -1,8 +1,6 @@
 import { isFavorite, addFavorite } from './icons'
 import Hub from 'hub.js'
 
-console.log('-scroll-')
-
 const hub = Hub()
 
 hub.subscribe({

@@ -28,6 +28,15 @@ exports.tasks = {
       dest: 'dist/index.js',
       raw: true,
       targets: [ 'inline' ]
+    },
+    done: {
+      on (val, stamp, done) {
+        done.root().set({
+          tasks: {
+            reload: { done: true }
+          }
+        }, stamp)
+      }
     }
   },
   'serve-app': {

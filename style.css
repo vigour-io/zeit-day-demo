@@ -6,6 +6,7 @@ div {
   height: 100vw;
   border: 1px solid lightgrey;
   margin-bottom: 8px;
+  overflow: hidden;
 }
 
 div:hover {
@@ -26,6 +27,7 @@ h1 {
   vertical-align: top;
   display: inline-block;
   margin: 6px 8px 0;
+  white-space: nowrap;
 }
 
 span {

@@ -1,5 +1,5 @@
-import h from 'hub.js'
-const hub = h()
+import Hub from 'hub.js'
+const hub = Hub()
 
 hub.subscribe({
   photos: {
@@ -16,9 +16,9 @@ hub.subscribe({
     title.innerHTML = photo.title.compute()
     subtitle.value = photo.subtitle.compute()
 
-    subtitle.oninput = () => photo.set({
+    subtitle.addEventListener('input', () => data.set({
       subtitle: subtitle.value
-    })
+    }))
 
     div.appendChild(img)
     div.appendChild(title)
@@ -39,4 +39,4 @@ hub.subscribe({
   }
 })
 
-hub.connect('ws://localhost:8080')
+hub.connect('ws://localhost:3030')

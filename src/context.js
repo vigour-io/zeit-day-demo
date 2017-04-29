@@ -1,7 +1,7 @@
 import { isFavorite, addFavorite } from './icons'
-import h from 'hub.js'
+import Hub from 'hub.js'
 
-const hub = h()
+const hub = Hub()
 
 hub.subscribe({
   photos: {

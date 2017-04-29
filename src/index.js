@@ -1,1 +1,1 @@
-import simple
+import app from './simple'

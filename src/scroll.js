@@ -1,7 +1,7 @@
 import { isFavorite, addFavorite } from './icons'
-import h from 'hub.js'
+import Hub from 'hub.js'
 
-const hub = h()
+const hub = Hub()
 
 hub.subscribe({
   photos: {
@@ -85,6 +85,7 @@ hub.subscribe({
 
 hub.connect('ws://localhost:3030')
 
+// add listeners and set initial width and height
 window.addEventListener('scroll', () => hub.client.set({
   scrollTop: document.body.scrollTop
 }))

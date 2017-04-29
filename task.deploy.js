@@ -26,7 +26,7 @@ exports.tasks = {
     type: 'build-js',
     after: [ 'deploy-services' ],
     options: {
-      entry: 'src/index.js',
+      entry: 'src/context.js',
       dest: 'dist/index.js',
       env: [
         '@', 'parent', 'parent', 'parent',

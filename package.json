@@ -5,6 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "task -c task.dev.js",
+    "scroll": "task -c task.dev.scroll.js",
+    "simple": "task -c task.dev.simple.js",
     "deploy": "task -c task.deploy.js",
     "start": "node server.js"
   },

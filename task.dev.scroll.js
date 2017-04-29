@@ -8,7 +8,7 @@ exports.tasks = {
   'build-app': {
     type: 'build-js',
     options: {
-      entry: 'src/context.js',
+      entry: 'src/scroll.js',
       dest: 'dist/index.js',
       raw: true,
       targets: [ 'inline' ]

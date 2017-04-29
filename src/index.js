@@ -83,7 +83,7 @@ hub.subscribe({
   }
 })
 
-hub.connect('ws://localhost:8080')
+hub.connect(process.env.ZEIT_DEMO_DAY_HUB || 'ws://localhost:8080')
 
 window.addEventListener('scroll', () => hub.client.set({
   scrollTop: document.body.scrollTop

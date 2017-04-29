@@ -1,15 +1,20 @@
 {
   "name": "zeit-demo-day",
   "version": "0.0.1",
-  "description": "Hub.js example",
+  "description": "hub.js example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "builder-boy src/index.js dist/index.js -w & builder-boy hub/index.js dist/hub.js -w"
+    "dev": "task -c task.dev.js",
+    "deploy": "task -c task.deploy.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "jim@vigour.io",
+  "services": {
+    "hub": "./hub"
+  },
   "dependencies": {
-    "hub.js": "latest"
+    "hub.js": "latest",
+    "task": "^1.2.5"
   },
   "devDependencies": {
     "builder-boy": "latest"

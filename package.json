@@ -8,7 +8,9 @@
     "scroll": "task -c task.dev.scroll.js",
     "simple": "task -c task.dev.simple.js",
     "deploy": "task -c task.deploy.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "hub": "node hub/dist",
+    "app": "node server"
   },
   "files": [ "dist", "server.js", "style.css", "index.html" ],
   "author": "jim@vigour.io",

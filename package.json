@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "task -c task.dev.js",
     "deploy": "task -c task.deploy.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "author": "jim@vigour.io",
   "services": {

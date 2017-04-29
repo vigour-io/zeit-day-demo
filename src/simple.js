@@ -7,16 +7,16 @@ hub.subscribe({
   photos: {
     $any: true
   }
-}, (photo, type, subs, tree) => {
+}, (data, type, subs, tree) => {
   if (type === 'new') {
     const div = document.createElement('div')
     const img = document.createElement('img')
     const title = document.createElement('h1')
     const subtitle = document.createElement('input')
 
-    img.src = photo.src.compute()
-    title.innerHTML = photo.title.compute()
-    subtitle.value = photo.subtitle.compute()
+    img.src = data.get('src', '').compute()
+    title.innerHTML = data.get('title', '').compute()
+    subtitle.value = data.get('subtitle', 'nature!').compute()
 
     subtitle.addEventListener('input', () => data.set({
       subtitle: subtitle.value
@@ -32,9 +32,9 @@ hub.subscribe({
   } else if (type === 'update') {
     const [ img, title, subtitle ] = tree.node.children
 
-    img.src = photo.src.compute()
-    title.innerHTML = photo.title.compute()
-    subtitle.value = photo.subtitle.compute()
+    img.src = data.src.compute()
+    title.innerHTML = data.title.compute()
+    subtitle.value = data.subtitle.compute()
   } else if (type === 'remove') {
     tree.node.parentNode.removeChild(tree.node)
     delete tree.node

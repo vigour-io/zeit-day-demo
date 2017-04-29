@@ -15,8 +15,7 @@ const fetchTumblr = (blog, offset = 0) => fetch(
   .then(json => json.response.posts.map(val => ({
     [val.id]: {
       src: val.photos && val.photos[0].alt_sizes[0].url,
-      title: val.source_title || (val.tags && val.tags[0]) || 'wow',
-      subtitle: (val.tags && val.tags.join(', ')) || 'amazing'
+      title: val.source_title || (val.tags && val.tags[0]) || 'wow'
     }
   })).reduce((a, b) => Object.assign(a, b), {}))
 

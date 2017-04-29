@@ -8,8 +8,13 @@ http.createServer((req, res) => {
     if (~req.url.indexOf('favicon')) {
       res.end('')
     } else if (!parsed.base) {
+      res.setHeader('content-type', 'text/html')
       fs.createReadStream('index.html').pipe(res)
     } else {
+      res.setHeader('content-type', parsed.ext === 'css'
+        ? 'text/css'
+        : 'text/javascript'
+      ))
       fs.createReadStream('.' + join(parsed.dir, parsed.base)).pipe(res)
     }
   } catch (e) {

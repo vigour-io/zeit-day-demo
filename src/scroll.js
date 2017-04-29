@@ -12,6 +12,7 @@ hub.subscribe({
       $keys: {
         val (keys, photos) {
           const client = photos.root().client
+
           const scrollTop = client.get('scrollTop', 0).compute()
           const innerHeight = client.get('innerHeight', 0).compute()
           const innerWidth = client.get('innerWidth', 0).compute()

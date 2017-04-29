@@ -3,6 +3,16 @@ import Hub from 'hub.js'
 
 const hub = Hub()
 
+const login = document.createElement('input')
+login.className = 'login'
+
+document.body.appendChild(login)
+
+const holder = document.createElement('div')
+
+document.body.appendChild(login)
+document.body.appendChild(holder)
+
 hub.subscribe({
   photos: {
     $any: {
@@ -10,6 +20,7 @@ hub.subscribe({
       $keys: {
         val (keys, photos) {
           const client = photos.root().client
+
           const scrollTop = client.get('scrollTop', 0).compute()
           const innerHeight = client.get('innerHeight', 0).compute()
           const innerWidth = client.get('innerWidth', 0).compute()
@@ -63,7 +74,7 @@ hub.subscribe({
       div.appendChild(favorite)
       div.appendChild(subtitle)
 
-      document.body.appendChild(div)
+      holder.appendChild(div)
 
       tree.node = div
     } else if (type === 'update') {
@@ -85,6 +96,7 @@ hub.subscribe({
 
 hub.connect('ws://localhost:3030')
 
+// add listeners and set initial width and height
 window.addEventListener('scroll', () => hub.client.set({
   scrollTop: document.body.scrollTop
 }))

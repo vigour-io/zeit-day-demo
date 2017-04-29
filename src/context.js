@@ -5,12 +5,15 @@ const hub = Hub()
 
 const login = document.createElement('input')
 login.className = 'login'
-
+login.placeholder = 'username'
 document.body.appendChild(login)
 
-const holder = document.createElement('div')
+login.addEventListener('input', () => hub.set({
+  context: login.value
+}))
 
-document.body.appendChild(login)
+// need this to keep login on the top
+const holder = document.createElement('section')
 document.body.appendChild(holder)
 
 hub.subscribe({

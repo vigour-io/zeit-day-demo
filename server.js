@@ -9,16 +9,27 @@ http.createServer((req, res) => {
       res.end('')
     } else if (!parsed.base) {
       res.setHeader('content-type', 'text/html')
-      fs.createReadStream('index.html').pipe(res)
+      fs.readFile('index.html', (err, data) => {
+        if (!err) {
+          res.end(data)
+        } else {
+          res.end('err')
+        }
+      })
     } else {
-      res.setHeader('content-type', parsed.ext === 'css'
+      res.setHeader('content-type', parsed.ext === '.css'
         ? 'text/css'
         : 'text/javascript'
       )
-      fs.createReadStream('.' + join(parsed.dir, parsed.base)).pipe(res)
+      fs.readFile('.' + join(parsed.dir, parsed.base), (err, data) => {
+        if (!err) {
+          res.end(data)
+        } else {
+          res.end('err')
+        }
+      })
     }
   } catch (e) {
-    console.log(e)
     res.end('err')
   }
 }).listen(process.env.NOW ? 80 : 8080)

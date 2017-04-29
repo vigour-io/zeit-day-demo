@@ -1,8 +1,6 @@
 import Hub from 'hub.js'
 const hub = Hub()
 
-console.log('-simple-')
-
 hub.subscribe({
   photos: {
     $any: true

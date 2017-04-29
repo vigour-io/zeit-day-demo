@@ -31,3 +31,5 @@ const hub = Hub({
 })
 
 hub.listen(3030)
+
+hub.on('error', err => console.log(err))

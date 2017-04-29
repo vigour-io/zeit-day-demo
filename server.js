@@ -14,7 +14,7 @@ http.createServer((req, res) => {
       res.setHeader('content-type', parsed.ext === 'css'
         ? 'text/css'
         : 'text/javascript'
-      ))
+      )
       fs.createReadStream('.' + join(parsed.dir, parsed.base)).pipe(res)
     }
   } catch (e) {

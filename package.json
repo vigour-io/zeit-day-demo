@@ -5,12 +5,11 @@
   "main": "server.js",
   "scripts": {
     "dev": "task -c task.dev.js",
+    "hub": "task -c task.dev.hub.js",
     "scroll": "task -c task.dev.scroll.js",
     "simple": "task -c task.dev.simple.js",
     "deploy": "task -c task.deploy.js",
-    "start": "node server.js",
-    "hub": "node hub/dist",
-    "app": "node server"
+    "start": "node server.js"
   },
   "files": [ "dist", "server.js", "style.css", "index.html" ],
   "author": "jim@vigour.io",

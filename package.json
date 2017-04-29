@@ -2,22 +2,23 @@
   "name": "zeit-demo-day",
   "version": "0.0.1",
   "description": "hub.js example",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "dev": "task -c task.dev.js",
     "deploy": "task -c task.deploy.js",
     "start": "node server.js"
   },
+  "files": [ "dist", "server.js", "style.css", "index.html" ],
   "author": "jim@vigour.io",
   "services": {
     "hub": "./hub"
   },
   "dependencies": {
-    "hub.js": "latest",
-    "task": "^1.2.5"
+    "hub.js": "latest"
   },
   "devDependencies": {
-    "builder-boy": "latest"
+    "builder-boy": "latest",
+    "task": "^1.2.5"
   },
   "license": "ISC"
 }

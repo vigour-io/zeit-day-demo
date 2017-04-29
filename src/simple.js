@@ -39,4 +39,4 @@ hub.subscribe({
   }
 })
 
-hub.connect('ws://localhost:3030')
+hub.connect(process.env.ZEIT_DEMO_DAY_HUB || 'ws://localhost:3030')

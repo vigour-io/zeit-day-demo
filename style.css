@@ -72,3 +72,12 @@ input {
     margin-right: 8px;
   }
 }
+
+.login {
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  background: '#eee';
+  outline: 0;
+}

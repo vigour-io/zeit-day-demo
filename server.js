@@ -18,6 +18,7 @@ http.createServer((req, res) => {
       fs.createReadStream('.' + join(parsed.dir, parsed.base)).pipe(res)
     }
   } catch (e) {
+    console.log(e)
     res.end('err')
   }
 }).listen(process.env.NOW ? 80 : 8080)

@@ -83,7 +83,7 @@ hub.subscribe({
   }
 })
 
-hub.connect('ws://localhost:8080')
+hub.connect('ws://localhost:3030')
 
 window.addEventListener('scroll', () => hub.client.set({
   scrollTop: document.body.scrollTop

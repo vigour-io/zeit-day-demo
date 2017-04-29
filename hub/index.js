@@ -1,4 +1,4 @@
-import h from 'hub.js'
+import Hub from 'hub.js'
 import fetch from 'node-fetch'
 const tumblrApiKey = 'wZE0T5dBvDf7Qm1mvRNUMHoKH4IPq2aJRzde1wz0WMHyW2rwLP'
 
@@ -20,7 +20,7 @@ const fetchTumblr = (blog, offset = 0) => fetch(
     }
   })).reduce((a, b) => Object.assign(a, b), {}))
 
-const hub = h({
+const hub = Hub({
   photos: function * () {
     var i = 0
     while (i < 2) {

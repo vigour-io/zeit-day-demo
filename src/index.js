@@ -1,1 +1,1 @@
-import app from './context'
+import app from './simple'
